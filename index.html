@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SB Ateliê | Artesanato com Amor</title>
+
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #d4a373;
+            --secondary: #fefae0;
+            --dark: #333;
+            --light: #fff;
+            --whatsapp: #25D366;
+            --instagram: #E1306C;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
+
+        body {
+            background-color: #fafafa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* ================= HEADER ================= */
+        header {
+            background: var(--light);
+            padding: 20px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,.05);
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: var(--primary);
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* ================= HERO ================= */
+        .hero {
+            min-height: 85vh;
+            background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)),
+            url('https://images.unsplash.com/photo-1520975922284-9bcd89f4e22c') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 650px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 40px;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            opacity: .9;
+        }
+
+        /* ================= SECTIONS ================= */
+        section {
+            padding: 80px 6%;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .title h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+        }
+
+        .title p {
+            max-width: 700px;
+            margin: 10px auto 0;
+            font-size: 1.1rem;
+        }
+
+        /* ================= APRESENTAÇÃO ================= */
+        .about {
+            background: var(--light);
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        /* ================= CONTATO ================= */
+        .contact {
+            background: var(--secondary);
+            text-align: center;
+        }
+
+        .whatsapp-btn {
+            margin: 30px auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--whatsapp);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: .3s;
+            box-shadow: 0 6px 15px rgba(37,211,102,.4);
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-4px);
+            background: #1ebc57;
+        }
+
+        /* ================= NEWSLETTER ================= */
+        .newsletter {
+            background: var(--light);
+            border-top: 1px solid #eee;
+        }
+
+        .newsletter-box {
+            max-width: 500px;
+            margin: auto;
+            text-align: center;
+        }
+
+        form {
+            margin-top: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input {
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        button {
+            padding: 15px;
+            border: none;
+            border-radius: 6px;
+            background: var(--dark);
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        button:hover {
+            background: black;
+        }
+
+        /* ================= FOOTER ================= */
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 40px 6%;
+        }
+
+        .social a {
+            color: white;
+            font-size: 2rem;
+            margin: 0 15px;
+            transition: .3s;
+        }
+
+        .social a:hover {
+            color: var(--instagram);
+        }
+
+        footer p {
+            margin-top: 20px;
+            font-size: .9rem;
+            opacity: .7;
+        }
+
+        /* ================= RESPONSIVO ================= */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .whatsapp-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">SB Ateliê</div>
+    <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+        <a href="#novidades">Novidades</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div>
+        <h1>Artesanato feito com amor</h1>
+        <p>Peças exclusivas, personalizadas e criadas à mão para transformar momentos especiais.</p>
+        <a href="#contato" class="btn">Fazer Orçamento</a>
+    </div>
+</section>
+
+<section id="sobre" class="about">
+    <div class="title">
+        <h2>Sobre o SB Ateliê</h2>
+        <p>Conheça nossa história e nosso propósito</p>
+    </div>
+
+    <div class="about-content">
+        <p>
+            O <strong>SB Ateliê</strong> nasceu da paixão por criar peças únicas e cheias de significado.
+            Cada detalhe é pensado com carinho, unindo criatividade, qualidade e exclusividade.
+        </p>
+        <p>
+            Trabalhamos com encomendas personalizadas para presentear, decorar e eternizar momentos.
+        </p>
+    </div>
+</section>
+
+<section id="contato" class="contact">
+    <div class="title">
+        <h2>Entre em contato</h2>
+        <p>Fale conosco diretamente pelo WhatsApp</p>
+    </div>
+
+    <!-- 🔧 EDITE O LINK DO WHATSAPP AQUI -->
+    <a class="whatsapp-btn"
+       href="https://wa.me/5599999999999?text=Olá,%20gostaria%20de%20um%20orçamento%20no%20SB%20Ateliê"
+       target="_blank">
+        <i class="fab fa-whatsapp"></i> Conversar no WhatsApp
+    </a>
+</section>
+
+<section id="novidades" class="newsletter">
+    <div class="newsletter-box">
+        <h2>Receba novidades</h2>
+        <p>Cadastre seu nome e e-mail para receber promoções e lançamentos.</p>
+
+        <form onsubmit="alert('Cadastro realizado com sucesso!'); return false;">
+            <input type="text" placeholder="Seu nome" required>
+            <input type="email" placeholder="Seu e-mail" required>
+            <button type="submit">Quero receber novidades</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <div class="social">
+        <!-- 🔧 EDITE O LINK DO INSTAGRAM AQUI -->
+        <a href="https://instagram.com/seu_instagram" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+    <p>&copy; 2026 SB Ateliê • Todos os direitos reservados</p>
+</footer>
+
+</body>
+</html>
