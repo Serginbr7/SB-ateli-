@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SB Ateliê - Arte e Dedicação</title>
+    <title>SB Ateliê | Arte e Dedicação</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* --- Variáveis da Nova Paleta (Salmão e Azul Petróleo) --- */
+        /* --- Identidade Visual (Nova) --- */
         :root {
             --primary-color: #006D77; /* Azul Petróleo */
             --brand-bg: #F28C8C;      /* Salmão/Coral */
@@ -24,7 +24,6 @@
             --whatsapp-color: #25D366;
         }
 
-        /* --- Reset Básico --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         html { scroll-behavior: smooth; }
@@ -36,7 +35,7 @@
             overflow-x: hidden;
         }
 
-        /* --- Header --- */
+        /* --- Cabeçalho --- */
         header {
             background-color: var(--white);
             padding: 15px 5%;
@@ -70,7 +69,7 @@
 
         .hamburger { display: none; cursor: pointer; font-size: 1.5rem; color: var(--primary-color); }
 
-        /* --- Hero Section (Capa) --- */
+        /* --- Capa (Hero) --- */
         .hero {
             min-height: 85vh;
             background-color: var(--brand-bg);
@@ -88,7 +87,6 @@
             font-size: clamp(3.5rem, 8vw, 5rem);
             margin-bottom: 10px;
             line-height: 1.2;
-            /* Sombra no texto que você pediu: */
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
         }
 
@@ -114,7 +112,7 @@
         }
         .btn-cta:hover { background-color: #005a63; transform: translateY(-3px); }
 
-        /* --- Estilos Gerais de Seção --- */
+        /* --- Configuração das Seções --- */
         section {
             padding: 80px 5%;
             margin-bottom: 40px;
@@ -134,7 +132,7 @@
 
         p { max-width: 800px; margin: 0 auto 15px auto; color: #555; text-align: center; }
 
-        /* --- Seção Sobre (Fundo Branco) --- */
+        /* --- Seção Sobre --- */
         .presentation { background-color: var(--white); text-align: center; }
         
         .sarah-link {
@@ -156,7 +154,7 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
 
-        /* --- Seção Vitrine de Produtos (Javascript) --- */
+        /* --- Seção Vitrine (Produtos) --- */
         .vitrine-section { background-color: var(--white); }
 
         .produtos-grid {
@@ -191,11 +189,11 @@
         .produto-nome {
             font-size: 1.1rem; font-weight: bold; color: var(--primary-color); margin-bottom: 8px;
         }
-        .produto-desc { font-size: 0.9rem; color: #666; margin-bottom: 15px; text-align: left; }
-        .produto-preco { font-size: 1.2rem; font-weight: 700; color: var(--brand-bg); margin-bottom: 15px; text-align: left; }
-
+        .produto-desc { font-size: 0.9rem; color: #666; margin-bottom: 20px; text-align: left; }
+        
+        /* Botão Encomendar */
         .btn-comprar {
-            display: block; width: 100%; padding: 10px;
+            display: block; width: 100%; padding: 12px;
             background-color: var(--primary-color); color: white;
             text-decoration: none; border-radius: 8px;
             font-weight: bold; text-transform: uppercase; font-size: 0.9rem;
@@ -219,7 +217,7 @@
         }
         .whatsapp-btn:hover { background-color: #1ebc57; transform: translateY(-3px); }
 
-        /* --- Footer --- */
+        /* --- Rodapé --- */
         footer {
             background-color: var(--primary-color); color: white;
             padding: 50px 5%; text-align: center;
@@ -227,10 +225,10 @@
         .social-links a { color: white; font-size: 2.2rem; margin: 0 15px; transition: 0.3s; display: inline-block; }
         .social-links a:hover { color: var(--brand-bg); transform: translateY(-5px); }
 
-        /* --- Animações de Clique --- */
+        /* --- Efeitos de Clique --- */
         .btn-cta:active, .whatsapp-btn:active, .social-links a:active { transform: scale(0.95); }
 
-        /* --- Responsividade --- */
+        /* --- Responsividade (Mobile) --- */
         @media (max-width: 768px) {
             .hamburger { display: block; }
             .nav-menu {
@@ -270,7 +268,7 @@
         
         <a href="quemsou.html" class="sarah-link">
             Conheça a Sarah
-            <img src="../img/sarah.jpg" alt="Sarah" class="sarah-img" data-aos="zoom-in">
+            <img src="img/sarah.jpg" alt="Sarah" class="sarah-img" data-aos="zoom-in">
         </a>
     </section>
 
@@ -317,7 +315,7 @@
     <script> AOS.init({ duration: 1000, once: true }); </script>
 
     <script>
-        // Cadastro de produtos
+        // LISTA DE PRODUTOS
         const produtos = [
             {
                 nome: "Boneca de Pano Luxo",
@@ -347,6 +345,7 @@
             const mensagem = `Olá! Gostei do produto *${produto.nome}* que vi no site.`;
             const linkZap = `https://wa.me/5511999999999?text=${encodeURIComponent(mensagem)}`;
 
+            // Gera o HTML do card SEM O PREÇO
             const cardHTML = `
                 <div class="produto-card" data-aos="fade-up" data-aos-delay="${index * 100}">
                     <img src="${produto.imagem}" alt="${produto.nome}" class="produto-img">
@@ -356,9 +355,8 @@
                             <p class="produto-desc">${produto.descricao}</p>
                         </div>
                         <div>
-                        
                             <a href="${linkZap}" target="_blank" class="btn-comprar">
-                                <i class="fab fa-whatsapp"></i> Encomendar 
+                                <i class="fab fa-whatsapp"></i> Encomendar
                             </a>
                         </div>
                     </div>
