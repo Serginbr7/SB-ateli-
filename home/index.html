@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SB Ateliê - Arte e Dedicação</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Variáveis da Nova Paleta (Baseada na Imagem) --- */
+        :root {
+            --primary-color: #006D77; /* Azul Petróleo (Cor do Texto do Logo) */
+            --brand-bg: #F28C8C;      /* Salmão/Coral (Fundo do Logo) */
+            --secondary-bg: #FFF0F0;  /* Um rosinha bem claro para seções alternadas */
+            --text-color: #333;
+            --white: #ffffff;
+            --whatsapp-color: #25D366;
+        }
+
+        /* --- Reset e Fontes --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif; /* Fonte moderna igual ao "ATELIÊ" */
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--secondary-bg);
+            overflow-x: hidden;
+        }
+
+        /* --- Header --- */
+        header {
+            background-color: var(--white);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700; /* Negrito */
+            color: var(--primary-color);
+            letter-spacing: 2px;
+            /* Se quiser usar a fonte cursiva no logo do menu também: */
+            /* font-family: 'Great Vibes', cursive; font-size: 2.5rem; letter-spacing: 0; */
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: 0.3s;
+            font-size: 0.95rem;
+            text-transform: uppercase; /* Letras maiúsculas igual ao logo */
+        }
+
+        .nav-menu a:hover {
+            color: var(--brand-bg);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        /* --- Hero Section (Agora com a cor da marca) --- */
+        .hero {
+            min-height: 85vh;
+            background-color: var(--brand-bg); /* Fundo Salmão */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--white); /* Texto branco para contrastar com o salmão */
+        }
+
+        .hero h1 {
+            font-family: 'Great Vibes', cursive; /* Fonte desenhada para destaque */
+            font-size: clamp(3.5rem, 8vw, 5rem);
+            margin-bottom: 10px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            max-width: 600px;
+            margin-bottom: 35px;
+            font-weight: 300;
+        }
+
+        .btn-cta {
+            padding: 15px 40px;
+            background-color: var(--primary-color); /* Botão Azul Petróleo */
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 109, 119, 0.3);
+            display: inline-block;
+        }
+
+        .btn-cta:hover {
+            background-color: #005a63;
+            transform: translateY(-3px);
+        }
+
+        /* --- Seções Gerais --- */
+        section {
+            padding: 80px 5%;
+            background-color: var(--white);
+            /* Sombra suave nas seções */
+            box-shadow: 0 10px 40px -10px rgba(0,0,0,0.08); 
+            margin-bottom: 40px;
+            border-radius: 0 0 20px 20px; /* Leve arredondamento embaixo */
+        }
+
+        .presentation {
+            text-align: center;
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 25px;
+            color: var(--primary-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        p {
+            max-width: 800px;
+            margin: 0 auto 15px auto;
+            color: #555;
+        }
+
+        /* --- Link da Sarah --- */
+        .sarah-link {
+            color: var(--primary-color); 
+            font-weight: bold; 
+            font-size: 2.2rem; 
+            text-decoration: none; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+            gap: 15px;
+            transition: 0.3s;
+            font-family: 'Great Vibes', cursive; /* Nome cursivo */
+        }
+
+        .sarah-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--brand-bg); /* Borda Salmão */
+            padding: 4px; /* Espacinho entre foto e borda */
+            background-color: white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        /* --- Contato --- */
+        .contact-section {
+            text-align: center;
+            background-color: var(--secondary-bg); /* Fundo rosa bem claro */
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--whatsapp-color);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #1ebc57;
+            transform: translateY(-3px);
+        }
+
+        /* --- Newsletter --- */
+        .newsletter-section {
+            text-align: center;
+            border-top: none;
+        }
+
+        .newsletter-container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .newsletter-form input {
+            padding: 15px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            font-size: 1rem;
+            background-color: #f9f9f9;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: var(--brand-bg);
+        }
+
+        .newsletter-form button {
+            padding: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #005a63;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary-color); /* Rodapé Azul Petróleo */
+            color: white;
+            padding: 50px 5%;
+            text-align: center;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 2.2rem;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .social-links a:hover {
+            color: var(--brand-bg); /* Ícone fica salmão ao passar o mouse */
+            transform: translateY(-5px);
+        }
+
+        /* --- Animações de Clique --- */
+        .btn-cta:active, 
+        .whatsapp-btn:active, 
+        .social-links a:active,
+        .newsletter-form button:active {
+            transform: scale(0.95);
+        }
+
+        /* --- Responsividade --- */
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                background-color: var(--white);
+                width: 75%;
+                height: 100vh;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                transition: 0.4s ease;
+                z-index: 1001;
+            }
+
+            .nav-menu.active { right: 0; }
+            .nav-menu a { font-size: 1.2rem; padding: 20px; width: 100%; text-align: center; }
+            section { padding: 60px 20px; border-radius: 0; }
+            .whatsapp-btn { width: 100%; }
+            .hero h1 { font-size: 3rem; }
+            .hero h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(3.5rem, 8vw, 5rem);
+            margin-bottom: 10px;
+            line-height: 1.2;
+            
+            /* ADICIONE ESTA LINHA PARA A SOMBRA: */
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">SB ATELIÊ</div>
+        
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <nav class="nav-menu" id="navMenu">
+            <a href="#sobre" onclick="toggleMenu()">Sobre</a>
+            <a href="#contato" onclick="toggleMenu()">Contato</a>
+            <a href="#novidades" onclick="toggleMenu()">Novidades</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1 data-aos="fade-up">Feito à mão,<br>com amor</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Peças exclusivas e personalizadas com a alma do SB Ateliê.</p>
+        <a href="#contato" class="btn-cta" data-aos="zoom-in" data-aos-delay="400">Encomendar Agora</a>
+    </section>
+
+    <section id="sobre" class="presentation" data-aos="fade-right">
+        <h2>O Ateliê</h2>
+        <p>Bem-vindo ao nosso mundo de cores e formas. No SB Ateliê, transformamos ideias em realidade através de artesanato de alta qualidade, unindo sofisticação e afeto em cada detalhe.</p>
+        
+        <a href="quemsou.html" class="sarah-link">
+            Conheça a Sarah
+            <img src="../img/sarah.jpg" alt="Sarah" class="sarah-img" data-aos="zoom-in">
+        </a>
+    </section>
+
+    <section id="contato" class="contact-section" data-aos="fade-left">
+        <h2>Vamos conversar?</h2>
+        <p>Tem uma ideia incrível? Clique abaixo e me chame no WhatsApp para criarmos algo único.</p>
+        
+        <a href="https://wa.me/5511999999999" class="whatsapp-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i> Iniciar Conversa
+        </a>
+    </section>
+
+    <section id="novidades" class="newsletter-section" data-aos="fade-up">
+        <div class="newsletter-container">
+            <h2>Fique por dentro</h2>
+            <p>Cadastre-se para receber novidades, lançamentos e inspirações do ateliê.</p>
+            
+            <form class="newsletter-form">
+                <input type="text" name="nome" placeholder="Seu Nome" required>
+                <input type="email" name="email" placeholder="Seu melhor E-mail" required>
+                <button type="submit">Quero fazer parte</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://instagram.com/seu_usuario_aqui" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            </div>
+        <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">&copy; 2024 SB Ateliê. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            const icon = document.querySelector('.hamburger i');
+            menu.classList.toggle('active');
+            
+            if (menu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        }
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true
+      });
+    </script>
+</body>
+</html>

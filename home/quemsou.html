@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem sou eu - SB Ateliê</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Variáveis (Mesma Paleta) --- */
+        :root {
+            --primary-color: #006D77; /* Azul Petróleo */
+            --brand-bg: #F28C8C;      /* Salmão/Coral */
+            --secondary-bg: #FFF0F0;  /* Rosinha claro */
+            --text-color: #333;
+            --white: #ffffff;
+            --whatsapp-color: #25D366;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-color);
+            background-color: var(--secondary-bg); /* Fundo rosa claro */
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- Header Simplificado --- */
+        header {
+            background-color: var(--white);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-link:hover { color: var(--brand-bg); }
+
+        /* --- Seção de Perfil (Card Central) --- */
+        .profile-container {
+            flex: 1; /* Ocupa o espaço disponível para empurrar o footer */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .profile-card {
+            background-color: var(--white);
+            width: 100%;
+            max-width: 600px;
+            padding: 50px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px -10px rgba(0,0,0,0.1);
+            border-top: 10px solid var(--brand-bg); /* Detalhe Salmão no topo */
+        }
+
+        /* Foto da Sarah */
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--brand-bg);
+            padding: 5px;
+            background-color: white;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Títulos e Textos */
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1); /* Sombra no texto */
+        }
+
+        h2 {
+            font-size: 1.1rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+
+        .bio-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 35px;
+        }
+
+        /* Botão do WhatsApp (Destaque) */
+        .whatsapp-btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--whatsapp-color);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: 0.3s;
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .whatsapp-btn i { margin-right: 10px; font-size: 1.5rem; }
+        
+        .whatsapp-btn:hover {
+            background-color: #1ebc57;
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-btn:active { transform: scale(0.95); }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 5%;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .social-links { margin-bottom: 15px; }
+        .social-links a { color: white; font-size: 1.8rem; margin: 0 10px; transition: 0.3s; }
+        .social-links a:hover { color: var(--brand-bg); }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">SB ATELIÊ</a>
+        
+        <a href="index.html" class="nav-link">
+            <i class="fas fa-arrow-left"></i> Voltar ao Início
+        </a>
+    </header>
+
+    <div class="profile-container">
+        <div class="profile-card" data-aos="fade-up">
+            
+            <img src="../img/sarah.jpg" alt="Sarah" class="profile-img" data-aos="zoom-in" data-aos-delay="200">
+            
+            <h1 data-aos="fade-up" data-aos-delay="300">Olá, sou a Sarah!</h1>
+            <h2 data-aos="fade-up" data-aos-delay="400">Artesã & Criativa</h2>
+            
+            <p class="bio-text" data-aos="fade-up" data-aos-delay="500">
+                Apaixonada por transformar materiais simples em memórias eternas. 
+                Cada peça do SB Ateliê carrega um pedacinho da minha dedicação e amor pela arte. 
+                <br><br>
+                Se você busca algo exclusivo e feito à mão, ficarei muito feliz em te atender!
+            </p>
+            
+            <a href="https://wa.me/5511999999999" class="whatsapp-btn" target="_blank" data-aos="zoom-in" data-aos-delay="600">
+                <i class="fab fa-whatsapp"></i> Falar com a Sarah
+            </a>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://instagram.com/seu_usuario_aqui" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2024 SB Ateliê. Feito com amor.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 1000, once: true });
+    </script>
+
+</body>
+</html>
